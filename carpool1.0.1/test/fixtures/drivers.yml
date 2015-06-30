@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  time: 2015-06-30 17:21:27
+  sourcelat: 1.5
+  sourcelong: 1.5
+  deslat: 1.5
+  deslong: 1.5
+
+two:
+  email: MyString
+  time: 2015-06-30 17:21:27
+  sourcelat: 1.5
+  sourcelong: 1.5
+  deslat: 1.5
+  deslong: 1.5
