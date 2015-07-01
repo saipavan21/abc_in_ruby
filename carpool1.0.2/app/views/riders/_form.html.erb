@@ -1,0 +1,41 @@
+<%= form_for(@rider) do |f| %>
+  <% if @rider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@rider.errors.count, "error") %> prohibited this rider from being saved:</h2>
+
+      <ul>
+      <% @rider.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.time_select :time %>
+  </div>
+  <div class="field">
+    <%= f.label :sourcelat %><br>
+    <%= f.text_field :sourcelat %>
+  </div>
+  <div class="field">
+    <%= f.label :sourcelong %><br>
+    <%= f.text_field :sourcelong %>
+  </div>
+  <div class="field">
+    <%= f.label :deslat %><br>
+    <%= f.text_field :deslat %>
+  </div>
+  <div class="field">
+    <%= f.label :deslong %><br>
+    <%= f.text_field :deslong %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

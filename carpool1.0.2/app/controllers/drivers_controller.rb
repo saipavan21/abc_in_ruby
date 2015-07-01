@@ -60,6 +60,7 @@ class DriversController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -69,6 +70,6 @@ class DriversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def driver_params
-      params.permit(:email, :time, :sourcelat, :sourcelong, :deslat, :deslong)
+      params.require(:driver).permit(:email, :time, :sourcelat, :sourcelong, :deslat, :deslong)
     end
 end
