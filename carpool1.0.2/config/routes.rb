@@ -6,6 +6,7 @@ Rails.application.routes.draw do
    post 'create' => 'users#create'
    post 'created' => 'drivers#create'
    post 'driver_search' => 'riders#driver_search'
+   post 'time_diff' => 'riders#time_diff'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
