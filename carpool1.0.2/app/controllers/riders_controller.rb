@@ -65,25 +65,38 @@ class RidersController < ApplicationController
     #render :json => @rider[:sourcelat]
      require 'pg'
      conn = PGconn.open(:dbname => 'carpool1_0_2_development')
-     #count = Driver.count
-     #i =2
+     count = Driver.count
+     i =2
 
-     #temp = ""
+     #temp = {}
      #while i <= count
-       #xyz = "SELECT * FROM drivers WHERE id = "+i.to_s
+      # xyz = "SELECT * FROM drivers WHERE id = "+i.to_s
        #drivetemp = conn.exec(xyz)
-       #temp = temp + drivetemp[:email]
+       #temp[drivetemp]=1
     #   d = haversine(@rider["sourcelat"],@rider.sourcelong,drivetemp.sourcelat,drivetemp.sourcelong) * 1.6096
     #   if d< 2
-    #   #@rider = conn.exec('SELECT * FROM Rider WHERE id = count')
+       #@rider = conn.exec('SELECT * FROM Rider WHERE id = count')
     #conn.exec('create extension cube')
     #conn.exec('create extension earthdistance')
-    query='select d.email,u.mobilenumber,u.name from drivers d,users u where d.email=u.email and d.email in (select email from drivers where earth_box(ll_to_earth(' + @rider.deslat.to_s + ',' + @rider.deslong.to_s + '), 1000) @> ll_to_earth(drivers.deslat,drivers.deslong) and earth_box(ll_to_earth(' + @rider.sourcelat.to_s + ',' + @rider.sourcelong.to_s + '), 1000) @> ll_to_earth(drivers.sourcelat,drivers.sourcelong));'
+    query='select d.email,d.sourcelat,d.sourcelong,d.deslat,d.deslong,u.mobilenumber,u.name from drivers d,users u where d.email=u.email and d.email in (select email from drivers where earth_box(ll_to_earth(' + @rider.deslat.to_s + ',' + @rider.deslong.to_s + '), 1000) @> ll_to_earth(drivers.deslat,drivers.deslong) and earth_box(ll_to_earth(' + @rider.sourcelat.to_s + ',' + @rider.sourcelong.to_s + '), 1000) @> ll_to_earth(drivers.sourcelat,drivers.sourcelong));'
     temp = conn.exec(query)
       #render :json => drivetemp
-       #end
-       render :json => temp
+      #file=[]
+      #temp = Driver.all
+      #t = 1
+      #temp.each{|x| file.insert(-1,(User.find_by(email: x[:email])))}
+       t ={}
+        t["details"] = temp
+    #end
+    render :json => t
     # end
+  end
+  def time_diff
+    @rider = Rider.new(rider_params)
+    require 'time_diff'
+    time_diff_components = Time.diff('03:59:00', '02:00:00')
+    time_diff_hour = time_diff_components[:hour] + (time_diff_components[:minute]/60.0)
+    render :json => time_diff_hour
   end
 
   private
