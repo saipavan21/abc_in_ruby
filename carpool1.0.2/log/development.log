@@ -4086,3 +4086,370 @@ Started POST "/time_diff" for ::1 at 2015-07-02 14:56:21 +0530
 Processing by RidersController#time_diff as */*
   Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"44.968046", "sourcelong"=>"-94.420307", "deslat"=>"44.240304", "deslong"=>"-91.493768"}
 Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/time_diff" for ::1 at 2015-07-02 15:15:50 +0530
+Processing by RidersController#time_diff as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"44.968046", "sourcelong"=>"-94.420307", "deslat"=>"44.240304", "deslong"=>"-91.493768"}
+Completed 200 OK in 21ms (Views: 0.2ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/users" for ::1 at 2015-07-02 15:54:59 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 203ms (Views: 197.1ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:07:00 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"pintu", "email"=>"prvnprvnkumar@gmail.com", "password"=>"[FILTERED]", "mobilenumber"=>"9876543211"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('prvnprvnkumar@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "pintu"], ["email", "prvnprvnkumar@gmail.com"], ["password", "123456789"], ["mobilenumber", 9876543211], ["created_at", "2015-07-02 10:37:00.128266"], ["updated_at", "2015-07-02 10:37:00.128266"]]
+  [1m[36m (6.4ms)[0m  [1mCOMMIT[0m
+Completed 406 Not Acceptable in 30ms (Views: 0.3ms | ActiveRecord: 8.5ms)
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (51.5ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:08:20 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"pintu", "email"=>"prvnprvnkumar@gmail.com", "password"=>"[FILTERED]", "mobilenumber"=>"9876543211"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('prvnprvnkumar@gmail.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered users/_form.html.erb (12.2ms)
+  Rendered users/new.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 62ms (Views: 58.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for ::1 at 2015-07-02 16:09:29 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 44ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:10:14 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"pintu12", "email"=>"prvnprvnkumar2@gmail.com", "password"=>"[FILTERED]", "mobilenumber"=>"9876543211"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('prvnprvnkumar2@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "pintu12"], ["email", "prvnprvnkumar2@gmail.com"], ["password", "123456789"], ["mobilenumber", 9876543211], ["created_at", "2015-07-02 10:40:14.025965"], ["updated_at", "2015-07-02 10:40:14.025965"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 406 Not Acceptable in 7ms (Views: 0.2ms | ActiveRecord: 2.4ms)
+
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  app/controllers/users_controller.rb:29:in `create'
+
+
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.5ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.8ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:10:45 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"pintu12", "email"=>"prvnprvnkumar21@gmail.com", "password"=>"[FILTERED]", "mobilenumber"=>"9876543211"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('prvnprvnkumar21@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "pintu12"], ["email", "prvnprvnkumar21@gmail.com"], ["password", "123456789"], ["mobilenumber", 9876543211], ["created_at", "2015-07-02 10:40:45.395626"], ["updated_at", "2015-07-02 10:40:45.395626"]]
+  [1m[36m (6.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://a2f71fdf.ngrok.io/users/12
+Completed 302 Found in 22ms (ActiveRecord: 8.1ms)
+
+
+Started GET "/users/12" for 220.225.46.65 at 2015-07-02 16:10:46 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 12]]
+  Rendered users/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 46ms (Views: 32.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for ::1 at 2015-07-02 16:11:03 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 40ms (Views: 38.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:15:07 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"pintu12", "email"=>"prvnprvnkumar251@gmail.com", "password"=>"[FILTERED]", "mobilenumber"=>"9876543211"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('prvnprvnkumar251@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "pintu12"], ["email", "prvnprvnkumar251@gmail.com"], ["password", "123456789"], ["mobilenumber", 9876543211], ["created_at", "2015-07-02 10:45:08.001827"], ["updated_at", "2015-07-02 10:45:08.001827"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://a2f71fdf.ngrok.io/users/13
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/users/13" for 220.225.46.65 at 2015-07-02 16:15:08 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  Rendered users/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:17:34 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abc", "email"=>"aad@asdn.com", "password"=>"[FILTERED]", "mobilenumber"=>"9098767887"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aad@asdn.com') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "abc"], ["email", "aad@asdn.com"], ["password", "asnbdndndn"], ["mobilenumber", 9098767887], ["created_at", "2015-07-02 10:47:34.445738"], ["updated_at", "2015-07-02 10:47:34.445738"]]
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://a2f71fdf.ngrok.io/users/14
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:17:43 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abc", "email"=>"aad@asdn.com", "password"=>"[FILTERED]", "mobilenumber"=>"9098767887"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aad@asdn.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 39ms (Views: 35.3ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:18:28 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"ssfc", "email"=>"pydhhd@gmail.com", "password"=>"[FILTERED]", "mobilenumber"=>"7896543211"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('pydhhd@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "ssfc"], ["email", "pydhhd@gmail.com"], ["password", "qgsgsgsydhd"], ["mobilenumber", 7896543211], ["created_at", "2015-07-02 10:48:28.410091"], ["updated_at", "2015-07-02 10:48:28.410091"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://a2f71fdf.ngrok.io/users/15
+Completed 302 Found in 6ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/15" for 220.225.46.65 at 2015-07-02 16:18:29 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  Rendered users/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 32ms (Views: 30.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:18:43 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abcdf", "email"=>"aad@asdn.com", "password"=>"[FILTERED]", "mobilenumber"=>"9098767887"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aad@asdn.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered users/_form.html.erb (2.0ms)
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 44ms (Views: 41.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:19:14 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abcdf", "email"=>"aaddfg@asdn.com", "password"=>"[FILTERED]", "mobilenumber"=>"9098767887"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaddfg@asdn.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "abcdf"], ["email", "aaddfg@asdn.com"], ["password", "asnbdndndn"], ["mobilenumber", 9098767887], ["created_at", "2015-07-02 10:49:14.385521"], ["updated_at", "2015-07-02 10:49:14.385521"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://a2f71fdf.ngrok.io/users/16
+Completed 302 Found in 5ms (ActiveRecord: 1.8ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:19:41 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abcdf", "email"=>"aaddfg@asdn.com", "password"=>"[FILTERED]", "mobilenumber"=>"9098767887"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaddfg@asdn.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  Rendered users/_form.html.erb (2.9ms)
+  Rendered users/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 61ms (Views: 57.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:23:47 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abcdf", "email"=>"aaddfg@asdn.com", "password"=>"[FILTERED]", "mobilenumber"=>"9098767887"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aaddfg@asdn.com') LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+  Rendered users/_form.html.erb (3.4ms)
+  Rendered users/new.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 65ms (Views: 55.2ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:24:30 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"abcdfsd", "email"=>"aerfgcg@asdn.com", "password"=>"[FILTERED]", "mobilenumber"=>"9098767887"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('aerfgcg@asdn.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "abcdfsd"], ["email", "aerfgcg@asdn.com"], ["password", "asnbdndndn"], ["mobilenumber", 9098767887], ["created_at", "2015-07-02 10:54:30.700943"], ["updated_at", "2015-07-02 10:54:30.700943"]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/time_diff" for ::1 at 2015-07-02 16:24:38 +0530
+Processing by RidersController#time_diff as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"44.968046", "sourcelong"=>"-94.420307", "deslat"=>"44.240304", "deslong"=>"-91.493768"}
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/create" for 220.225.46.65 at 2015-07-02 16:27:37 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"name"=>"praveen", "email"=>"hsysh@gmail.com", "password"=>"[FILTERED]", "mobilenumber"=>"1234567890"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('hsysh@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "praveen"], ["email", "hsysh@gmail.com"], ["password", "4926262672"], ["mobilenumber", 1234567890], ["created_at", "2015-07-02 10:57:37.347410"], ["updated_at", "2015-07-02 10:57:37.347410"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/created" for 220.225.46.65 at 2015-07-02 16:29:56 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DriversController#create as HTML
+  Parameters: {"email"=>"hsysh@gmail.com", "time"=>"16:34", "sourcelat"=>"19.1153798", "sourcelong"=>"72.9091436", "deslat"=>"19.1154908", "deslong"=>"72.8726952"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "drivers" ("email", "time", "sourcelat", "sourcelong", "deslat", "deslong", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "hsysh@gmail.com"], ["time", "2000-01-01 16:34:00.000000"], ["sourcelat", 19.1153798], ["sourcelong", 72.9091436], ["deslat", 19.1154908], ["deslong", 72.8726952], ["created_at", "2015-07-02 10:59:56.336467"], ["updated_at", "2015-07-02 10:59:56.336467"]]
+  [1m[35m (6.2ms)[0m  COMMIT
+Redirected to http://a2f71fdf.ngrok.io/drivers/9
+Completed 302 Found in 16ms (ActiveRecord: 7.4ms)
+
+
+Started GET "/drivers/9" for 220.225.46.65 at 2015-07-02 16:29:57 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DriversController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mDriver Load (0.2ms)[0m  [1mSELECT  "drivers".* FROM "drivers" WHERE "drivers"."id" = $1 LIMIT 1[0m  [["id", 9]]
+  Rendered drivers/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 44ms (Views: 42.2ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-02 16:34:33 +0530
+
+SyntaxError (/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+...drivers.sourcelong) < '+2.to_s');'
+...                               ^):
+  app/controllers/riders_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+
+
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (55.2ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (44.8ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (99.4ms)
+
+
+Started POST "/driver_search" for 220.225.46.65 at 2015-07-02 16:34:48 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+...drivers.sourcelong) < '+2.to_s');'
+...                               ^):
+  app/controllers/riders_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+
+
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.1ms)
+
+
+Started POST "/driver_search" for 220.225.46.65 at 2015-07-02 16:36:03 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+...drivers.sourcelong) < '+2.to_s');'
+...                               ^):
+  app/controllers/riders_controller.rb:81: syntax error, unexpected tSTRING_BEG, expecting keyword_end
+
+
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.1ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (44.2ms)
+
+
+Started POST "/driver_search" for 220.225.46.65 at 2015-07-02 17:02:54 +0530
+Cannot render console from 220.225.46.65! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+SyntaxError (/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:83: syntax error, unexpected ')', expecting keyword_end
+...rivers.sourcelong) < '+2.to_s');'
+...                               ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:89: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    require 'net/http'
+                ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:89: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:91: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+... Net::HTTP.get(URI.parse('https://maps.googleapis.com/maps/a...
+...                               ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:91: unknown regexp options - ap
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:91: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+...api/distancematrix/json?origins=riderlat,riderlong&destinati...
+...                               ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:91: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+...tinations=driverlat,driverlong'))
+...                               ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:93: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    require 'json'
+                 ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:99: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+    require 'time_diff'
+                      ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:100: syntax error, unexpected tINTEGER, expecting keyword_end
+    time_diff_components = Time.diff('03:59:00', '02:00:00')
+                                        ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:100: syntax error, unexpected tINTEGER, expecting keyword_end
+    time_diff_components = Time.diff('03:59:00', '02:00:00')
+                                                    ^
+/Users/saipavan/Desktop/abc_in_ruby/carpool1.0.2/app/controllers/riders_controller.rb:100: unterminated string meets end of file):
+  app/controllers/riders_controller.rb:83: syntax error, unexpected ')', expecting keyword_end
+  app/controllers/riders_controller.rb:89: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  app/controllers/riders_controller.rb:89: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/controllers/riders_controller.rb:91: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  app/controllers/riders_controller.rb:91: unknown regexp options - ap
+  app/controllers/riders_controller.rb:91: syntax error, unexpected tIDENTIFIER, expecting keyword_do or '{' or '('
+  app/controllers/riders_controller.rb:91: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+  app/controllers/riders_controller.rb:93: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  app/controllers/riders_controller.rb:99: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  app/controllers/riders_controller.rb:100: syntax error, unexpected tINTEGER, expecting keyword_end
+  app/controllers/riders_controller.rb:100: syntax error, unexpected tINTEGER, expecting keyword_end
+  app/controllers/riders_controller.rb:100: unterminated string meets end of file
+
+
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.9ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/saipavan/.rvm/gems/ruby-2.2.1/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.8ms)

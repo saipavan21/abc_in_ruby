@@ -62,34 +62,40 @@ class RidersController < ApplicationController
   end
   def driver_search
     @rider = Rider.new(rider_params)
-    #render :json => @rider[:sourcelat]
      require 'pg'
      conn = PGconn.open(:dbname => 'carpool1_0_2_development')
      count = Driver.count
-     i =2
-
-     #temp = {}
-     #while i <= count
-      # xyz = "SELECT * FROM drivers WHERE id = "+i.to_s
-       #drivetemp = conn.exec(xyz)
-       #temp[drivetemp]=1
-    #   d = haversine(@rider["sourcelat"],@rider.sourcelong,drivetemp.sourcelat,drivetemp.sourcelong) * 1.6096
-    #   if d< 2
-       #@rider = conn.exec('SELECT * FROM Rider WHERE id = count')
-    #conn.exec('create extension cube')
-    #conn.exec('create extension earthdistance')
     query='select d.email,d.sourcelat,d.sourcelong,d.deslat,d.deslong,u.mobilenumber,u.name from drivers d,users u where d.email=u.email and d.email in (select email from drivers where earth_box(ll_to_earth(' + @rider.deslat.to_s + ',' + @rider.deslong.to_s + '), 1000) @> ll_to_earth(drivers.deslat,drivers.deslong) and earth_box(ll_to_earth(' + @rider.sourcelat.to_s + ',' + @rider.sourcelong.to_s + '), 1000) @> ll_to_earth(drivers.sourcelat,drivers.sourcelong));'
     temp = conn.exec(query)
-      #render :json => drivetemp
-      #file=[]
-      #temp = Driver.all
-      #t = 1
-      #temp.each{|x| file.insert(-1,(User.find_by(email: x[:email])))}
        t ={}
         t["details"] = temp
-    #end
     render :json => t
-    # end
+  end
+
+  def driver_search_google_api
+    @rider = Rider.new(rider_params)
+     require 'pg'
+     conn = PGconn.open(:dbname => 'carpool1_0_2_development')
+     count = Driver.count
+     t = {}
+     #query_1 = '\set r_latitude ' + @rider.sourcelat.to_s + ';'
+     #query_2 = '\set r_longitude ' + @rider.sourcelong.to_s + ';'
+     #conn.exec(query_1)
+     #conn.exec(query_2)
+     driver_lat_long=conn.exec('select sourcelong , sourcelat from drivers')
+     query = 'select d.email,d.sourcelat,d.sourcelong,d.deslat,d.deslong,u.mobilenumber,u.name from drivers d,users u where d.email=u.email and d.email in (select email from drivers where' + google_dis_api(@rider.sourcelat,@rider.sourcelong,drivers.sourcelat,drivers.sourcelong) ' < ' + 2.to_s');'
+     temp = conn.exec(query)
+     t["details"] = temp
+     render :json => temp 
+  end
+  def google_dis_api(riderlat,riderlong,driverlat,driverlong)
+    require 'net/http'
+
+    result = Net::HTTP.get(URI.parse('https://maps.googleapis.com/maps/api/distancematrix/json?origins=riderlat,riderlong&destinations=driverlat,driverlong'))
+
+    require 'json'
+    x = JSON.parse(result)
+     d=  x["rows"][0]["elements"][0]["distance"]["text"].to_f
   end
   def time_diff
     @rider = Rider.new(rider_params)
