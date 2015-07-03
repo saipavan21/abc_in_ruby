@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 20150702154105) do
     t.datetime "updated_at", null: false
     t.integer  "driverid"
   end
-  execute "CREATE SEQUENCE drivers_driverid_seq START 1"
 
   create_table "riders", force: :cascade do |t|
     t.string   "email"
