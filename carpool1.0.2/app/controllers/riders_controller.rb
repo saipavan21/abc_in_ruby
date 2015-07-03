@@ -83,20 +83,23 @@ class RidersController < ApplicationController
      #conn.exec(query_1)
      #conn.exec(query_2)
      temp=[]
-     driver_source=conn.exec('select sourcelat , sourcelong, email from drivers;')
+     driver_source=conn.exec('select sourcelat , sourcelong, email, driverid, deslat ,deslong from drivers;')
      count=driver_source.count
      i = 0
      my_var=[]
      while i < count
-      d =  google_dis_api(@rider.sourcelat.to_f,@rider.sourcelong.to_f,driver_source[i]["sourcelat"].to_f,driver_source[i]["sourcelong"].to_f)
+      sourcedis =  google_dis_api(@rider.sourcelat.to_f,@rider.sourcelong.to_f,driver_source[i]["sourcelat"].to_f,driver_source[i]["sourcelong"].to_f)
+      desdis =  google_dis_api(@rider.deslat.to_f,@rider.deslong.to_f,driver_source[i]["deslat"].to_f,driver_source[i]["deslong"].to_f)
       
-      my_var.push(d)
+      my_var.push(sourcedis,desdis)
 
-      # if d <=1.0
-      #    query = 'select d.email,d.sourcelat,d.sourcelong,d.deslat,d.deslong,u.mobilenumber,u.name from drivers d,users u where d.email=u.email and d.email = ' + driver_source[i]["email"].to_s + ';'
-      #    temp1 = conn.exec(query)
-      #   temp = temp  + temp1
-      # end
+      if sourcedis <=1.0 && desdis <=1.0
+          query = 'select d.email,d.sourcelat,d.sourcelong,d.deslat,d.deslong,u.mobilenumber,u.name from drivers d,users u where d.email=u.email and d.driverid = ' + driver_source[i]["driverid"].to_s + ';'
+          temp1 = conn.exec(query)
+          temp.push(temp1)
+          #my_var.push(query)
+      end
+      
       i = i+1
      end 
 
