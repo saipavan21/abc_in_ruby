@@ -86,13 +86,17 @@ class RidersController < ApplicationController
      driver_source=conn.exec('select sourcelat , sourcelong, email from drivers;')
      count=driver_source.count
      i = 0
+     my_var=[]
      while i < count
       d =  google_dis_api(@rider.sourcelat.to_f,@rider.sourcelong.to_f,driver_source[i]["sourcelat"].to_f,driver_source[i]["sourcelong"].to_f)
-      if d <=1.0
-         query = 'select d.email,d.sourcelat,d.sourcelong,d.deslat,d.deslong,u.mobilenumber,u.name from drivers d,users u where d.email=u.email and d.email = ' + driver_source[i]["email"].to_s + ';'
-         temp1 = conn.exec(query)
-        temp = temp  + temp1
-      end
+      
+      my_var.push(d)
+
+      # if d <=1.0
+      #    query = 'select d.email,d.sourcelat,d.sourcelong,d.deslat,d.deslong,u.mobilenumber,u.name from drivers d,users u where d.email=u.email and d.email = ' + driver_source[i]["email"].to_s + ';'
+      #    temp1 = conn.exec(query)
+      #   temp = temp  + temp1
+      # end
       i = i+1
      end 
 
@@ -100,8 +104,9 @@ class RidersController < ApplicationController
      #temp = temp + conn.exec(query)
      t = {}
      t["details"] = temp
-     render :json => t
+     render :json => my_var
   end
+
   def google_dis_api(riderlat,riderlong,driverlat,driverlong)
     #@rider = Rider.new(rider_params)
     require 'net/http'
@@ -111,9 +116,16 @@ class RidersController < ApplicationController
     require 'json'
     x = JSON.parse(result)
     #render :json => x
-     d=  x["rows"][0]["elements"][0]["distance"]["text"].to_f
-     return d
+     #d=[]
+     #d=  x["rows"][0]["elements"][0]["distance"]["text"].to_f
+    if x["rows"][0]["elements"][0]["status"]=="OK"
+     return x["rows"][0]["elements"][0]["distance"]["text"].to_f
+    else
+     return nil
+    end
   end
+
+
   def time_diff
     @rider = Rider.new(rider_params)
     require 'time_diff'
