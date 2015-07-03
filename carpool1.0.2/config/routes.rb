@@ -8,6 +8,8 @@ Rails.application.routes.draw do
    post 'driver_search' => 'riders#driver_search'
    post 'time_diff' => 'riders#time_diff'
    post 'driver_search_google_api' => 'riders#driver_search_google_api'
+   post 'google_dis_api' => 'riders#google_dis_api'
+   get 'gcm' => 'drivers#gcm'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

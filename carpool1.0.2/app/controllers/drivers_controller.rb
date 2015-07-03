@@ -25,6 +25,8 @@ class DriversController < ApplicationController
   # POST /drivers.json
   def create
     @driver = Driver.new(driver_params)
+    i = Driver.count
+    @driver.driverid = i+1
 
     respond_to do |format|
       if @driver.save
@@ -60,6 +62,20 @@ class DriversController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def gcm
+    app = Rpush::Gcm::App.new
+    app.name = "Maps"
+    app.auth_key = "AIzaSyBEkWSAmgqumH7hxvzk_V-grkfgamgv-TY"
+    app.connections = 1
+    app.save!
+
+    n = Rpush::Gcm::Notification.new
+    n.app = Rpush::Gcm::App.find_by_name("Maps")
+    n.registration_ids = ["eZjKxcoUnDI:APA91bF5cD3Fq9kCjaqXw6p4em4vON8kJ8TpgIdKY-bOSX2ltFOmDwM_6mqO9pBHJuYoGEwx9F9JTrpZHpCR7ZsATlawFP7S5gpxFXq-sePOtWHjh9oBQ8bX7s3Ec1H2Y_Ojob_sdQQ0"]
+    n.data = { message: "hi mom!" }
+    n.save!
+  end
   
 
   private
@@ -70,6 +86,6 @@ class DriversController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def driver_params
-      params.permit(:email, :time, :sourcelat, :sourcelong, :deslat, :deslong)
+      params.permit(:driverid,:email, :time, :sourcelat, :sourcelong, :deslat, :deslong)
     end
 end

@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Driverid</th>
       <th>Email</th>
       <th>Time</th>
       <th>Sourcelat</th>
@@ -18,6 +19,7 @@
   <tbody>
     <% @drivers.each do |driver| %>
       <tr>
+        <td><%= driver.driverid %></td>
         <td><%= driver.email %></td>
         <td><%= driver.time %></td>
         <td><%= driver.sourcelat %></td>

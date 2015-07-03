@@ -11,10 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150701073649) do
+ActiveRecord::Schema.define(version: 20150702154105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "cube"
+  enable_extension "earthdistance"
 
   create_table "drivers", force: :cascade do |t|
     t.string   "email"
@@ -25,7 +27,9 @@ ActiveRecord::Schema.define(version: 20150701073649) do
     t.float    "deslong"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "driverid"
   end
+  execute "CREATE SEQUENCE drivers_driverid_seq START 1"
 
   create_table "riders", force: :cascade do |t|
     t.string   "email"
