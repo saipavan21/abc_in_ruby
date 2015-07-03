@@ -8785,3 +8785,417 @@ Processing by RidersController#driver_search_google_api as */*
   Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
   [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
 Completed 200 OK in 4065ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/drivers" for ::1 at 2015-07-03 15:20:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by DriversController#index as HTML
+  [1m[35mDriver Load (0.8ms)[0m  SELECT "drivers".* FROM "drivers"
+  Rendered drivers/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 191ms (Views: 179.0ms | ActiveRecord: 3.5ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:37:30 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 500 Internal Server Error in 36147ms (ActiveRecord: 3.8ms)
+
+PG::UndefinedColumn (ERROR:  column "sd" does not exist
+LINE 1: ...vers d,users u where d.email=u.email and d.email = sd@sdf.c;
+                                                              ^
+):
+  app/controllers/riders_controller.rb:97:in `exec'
+  app/controllers/riders_controller.rb:97:in `driver_search_google_api'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (56.2ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (129.8ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:38:07 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 200 OK in 12528ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:38:42 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 500 Internal Server Error in 29335ms (ActiveRecord: 1.9ms)
+
+PG::UndefinedColumn (ERROR:  column "sd" does not exist
+LINE 1: ...vers d,users u where d.email=u.email and d.email = sd@sdf.c;
+                                                              ^
+):
+  app/controllers/riders_controller.rb:97:in `exec'
+  app/controllers/riders_controller.rb:97:in `driver_search_google_api'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.7ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (59.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (56.1ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (123.2ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:39:36 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 500 Internal Server Error in 19999ms (ActiveRecord: 1.8ms)
+
+PG::UndefinedColumn (ERROR:  column "sd" does not exist
+LINE 1: ...vers d,users u where d.email=u.email and d.email = sd@sdf.c;
+                                                              ^
+):
+  app/controllers/riders_controller.rb:97:in `exec'
+  app/controllers/riders_controller.rb:97:in `driver_search_google_api'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (51.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (111.2ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:40:46 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 500 Internal Server Error in 9439ms (ActiveRecord: 0.2ms)
+
+PG::UndefinedColumn (ERROR:  column "sd" does not exist
+LINE 1: ...vers d,users u where d.email=u.email and d.email = sd@sdf.c;
+                                                              ^
+):
+  app/controllers/riders_controller.rb:97:in `exec'
+  app/controllers/riders_controller.rb:97:in `driver_search_google_api'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (3.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (53.9ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (116.3ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:43:13 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 500 Internal Server Error in 49336ms (ActiveRecord: 2.1ms)
+
+OpenSSL::SSL::SSLError (SSL_connect SYSCALL returned=5 errno=0 state=SSLv3 read server session ticket A):
+  app/controllers/riders_controller.rb:115:in `google_dis_api'
+  app/controllers/riders_controller.rb:91:in `driver_search_google_api'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (48.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (112.7ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:44:45 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 200 OK in 16702ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:45:51 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 200 OK in 8208ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:48:27 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 500 Internal Server Error in 6400ms (ActiveRecord: 2.1ms)
+
+PG::UndefinedColumn (ERROR:  column "sd" does not exist
+LINE 1: ...vers d,users u where d.email=u.email and d.email = sd@sdf.c;
+                                                              ^
+):
+  app/controllers/riders_controller.rb:97:in `exec'
+  app/controllers/riders_controller.rb:97:in `driver_search_google_api'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.0ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (72.6ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (52.2ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (123.0ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:52:37 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 200 OK in 4525ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:53:39 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 200 OK in 4081ms (Views: 0.3ms | ActiveRecord: 2.8ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:54:00 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 500 Internal Server Error in 4003ms (ActiveRecord: 2.1ms)
+
+TypeError (no implicit conversion of PG::Result into Array):
+  app/controllers/riders_controller.rb:98:in `driver_search_google_api'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (58.6ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (53.8ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (119.4ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:54:30 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 200 OK in 4250ms (Views: 0.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for ::1 at 2015-07-03 15:56:27 +0530
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 57ms (Views: 52.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/new" for ::1 at 2015-07-03 15:56:31 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (25.3ms)
+  Rendered users/new.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 61ms (Views: 60.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-07-03 15:57:17 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iwrPwII2nUff0ywQi7GKIdMoo7HQ5gTYlIomkBUbrZ9zhKGjPzHQvRX6nesuaGADf+Un5HTI+tdPm5nsep7Aug==", "user"=>{"name"=>"Ravi", "email"=>"sd@sdf.c", "password"=>"[FILTERED]", "mobilenumber"=>"9876567876"}, "commit"=>"Create User"}
+Unpermitted parameters: utf8, authenticity_token, user, commit
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 34ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:57:24 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 200 OK in 4164ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/drivers" for ::1 at 2015-07-03 15:57:38 +0530
+Processing by DriversController#index as HTML
+  [1m[36mDriver Load (0.2ms)[0m  [1mSELECT "drivers".* FROM "drivers"[0m
+  Rendered drivers/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/drivers" for ::1 at 2015-07-03 15:57:40 +0530
+Processing by DriversController#index as HTML
+  [1m[35mDriver Load (0.4ms)[0m  SELECT "drivers".* FROM "drivers"
+  Rendered drivers/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 66ms (Views: 64.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 15:58:01 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 200 OK in 4403ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+  [1m[35mDriver Load (1.0ms)[0m  SELECT "drivers".* FROM "drivers"
+  [1m[36mUser Load (7.2ms)[0m  [1mSELECT  "users".* FROM "users"  ORDER BY "users"."id" DESC LIMIT 1[0m
+
+
+Started GET "/users" for ::1 at 2015-07-03 15:59:43 +0530
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 41ms (Views: 36.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/new" for ::1 at 2015-07-03 15:59:50 +0530
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (2.3ms)
+  Rendered users/new.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 39ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-07-03 16:00:09 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kw7dXrD/JszVB4o1irfkJSjqAq6Q7aQJ5lK7NvAM/URrgLM9DfhrNh8uO84vbg4HhCeG+zTDWgY9QwRKn4mQYQ==", "user"=>{"name"=>"Ravi", "email"=>"sd@sdf.c", "password"=>"[FILTERED]", "mobilenumber"=>"2345678987"}, "commit"=>"Create User"}
+Unpermitted parameters: utf8, authenticity_token, user, commit
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for ::1 at 2015-07-03 16:00:16 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r30JTUCwR6z9DOub53Vh47UZ3iomKWm2OxCHEDtHJ69X82cu/bcKVjclWmBCrIvBGdRaf4IHl7ngAThsVMJKig==", "user"=>{"name"=>"Ravijns", "email"=>"sd@sdf.c", "password"=>"[FILTERED]", "mobilenumber"=>"2345678987"}, "commit"=>"Create User"}
+Unpermitted parameters: utf8, authenticity_token, user, commit
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for ::1 at 2015-07-03 16:00:43 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r30JTUCwR6z9DOub53Vh47UZ3iomKWm2OxCHEDtHJ69X82cu/bcKVjclWmBCrIvBGdRaf4IHl7ngAThsVMJKig==", "user"=>{"name"=>"Ravijns", "email"=>"sd@sdf.c", "password"=>"[FILTERED]", "mobilenumber"=>"2345678987"}, "commit"=>"Create User"}
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.0ms)
+
+ActionController::ParameterMissing (param is missing or the value is empty: users):
+  app/controllers/users_controller.rb:72:in `user_params'
+  app/controllers/users_controller.rb:27:in `create'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (66.1ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (59.6ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (133.5ms)
+
+
+Started POST "/users" for ::1 at 2015-07-03 16:01:01 +0530
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"r30JTUCwR6z9DOub53Vh47UZ3iomKWm2OxCHEDtHJ69X82cu/bcKVjclWmBCrIvBGdRaf4IHl7ngAThsVMJKig==", "user"=>{"name"=>"Ravijns", "email"=>"sd@sdf.c", "password"=>"[FILTERED]", "mobilenumber"=>"2345678987"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sd@sdf.c') LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "email", "password", "mobilenumber", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Ravijns"], ["email", "sd@sdf.c"], ["password", "12345432"], ["mobilenumber", 2345678987], ["created_at", "2015-07-03 10:31:01.875082"], ["updated_at", "2015-07-03 10:31:01.875082"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+Completed 200 OK in 14ms (Views: 0.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users" for ::1 at 2015-07-03 16:01:06 +0530
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 16:01:39 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 200 OK in 4476ms (Views: 0.5ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 16:04:19 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 500 Internal Server Error in 2525ms (ActiveRecord: 2.0ms)
+
+NameError (undefined local variable or method `d' for #<RidersController:0x007fac27cbb940>):
+  app/controllers/riders_controller.rb:94:in `driver_search_google_api'
+
+
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/actionpack-4.2.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (62.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/console.js.erb within layouts/javascript (45.0ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/ravikumarnimmi/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/web-console-2.1.3/lib/web_console/templates/index.html.erb (102.5ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 16:04:49 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "drivers"
+Completed 200 OK in 8633ms (Views: 0.5ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/driver_search_google_api" for ::1 at 2015-07-03 16:05:17 +0530
+Processing by RidersController#driver_search_google_api as */*
+  Parameters: {"email"=>"rider1@example.com", "time"=>"18:00", "sourcelat"=>"19.116710", "sourcelong"=>"72.898050", "deslat"=>"19.113466", "deslong"=>"72.883888"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "drivers"[0m
+Completed 200 OK in 17295ms (Views: 0.3ms | ActiveRecord: 1.9ms)
